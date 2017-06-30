@@ -1,0 +1,110 @@
+<style>
+    #carousel {width:100%; height:300px;}
+    #carousel #prev-button, #carousel #next-button {
+      position:absolute; top: 40%; font-size: 3em; color: #fff;
+    } 
+    #carousel #prev-button { left: 10px }
+    #carousel #next-button { right: 10px }
+    #carousel img {width: 100%; height: 100%;}
+</style>
+ <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+<md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
+<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Detalles">
+        <md-content class="md-padding" flex>
+        <div ng-controller="DetalleCatalogoCtrl" layout="row" >
+          <md-card flex="40">
+                <section id="carousel" ng-carousel
+                ng-init="curSlide=1; numSlides=6"
+                ng-swipe-right="curSlide=curSlide-1" 
+                ng-swipe-left="curSlide=curSlide+1">
+
+                <ul>
+                  <li><img src="media/img/6.jpg" />
+                  <li><img src="media/img/7.jpg" />
+                  <li><img src="media/img/8.jpg" />
+                  <li><img src="media/img/9.jpg" />
+                  <li><img src="media/img/5.jpg" />
+                </ul>
+                
+                
+                <div id="prev-button" ng-hide="curSlide==1"
+                  ng-click="curSlide=curSlide-1">
+                    <md-button class="md-icon-button" aria-label="Add">
+                        <md-tooltip md-autohide>After</md-tooltip>
+                        <ng-md-icon icon="keyboard_arrow_left" aria-label="After">
+                        </ng-md-icon>
+                    </md-button>
+                  </div>
+                
+                <div id="next-button" ng-hide="curSlide==numSlides"
+                  ng-click="curSlide=curSlide+1">
+                    <md-button class="md-icon-button" aria-label="Add">
+                        <md-tooltip md-autohide>Next</md-tooltip>
+                        <ng-md-icon icon="keyboard_arrow_right" aria-label="Next">
+                        </ng-md-icon>
+                    </md-button>
+                  </div>
+              </section>
+            </md-card>
+            <md-card flex="60">
+                <md-card-content>
+                <h2>YOLO</h2>
+                    <h3>100 S/.</h3>
+                  <p>
+Las medidas para un partido local son:
+Longitud: Mínimo 90 metros   –  Máximo 120 metros
+Ancho: Mínimo 45 metros   -  Máximo 90 metros
+Las medidas para compromisos internacionales no pueden ser tan extremas que las anteriores. Estas son:
+Longitud: Mínimo 100 metros  -  Máximo 110 metros
+Ancho: Mínimo 64 metros  -   Máximo 75 metros
+Otras medidas de una cancha de fútbol:
+En el centro de la cancha hay una circunferencia y esta tiene 9,15 metros de radio.
+Las áreas  que “rodean el arco”, el área chica con 5,5 metros de longitud y 7,32 metros de largo.
+Las áreas grandes de una cancha de fútbol cuentan con 16,5 de longitud y la misma distancia a ambos lados a partir del pórtico.
+Por último, desde la línea de fondo hasta el punto del lanzamiento penal deben haber 11 metros de distancia.
+                  </p>
+                </md-card-content>
+            </md-card>
+        </div>
+        </md-content>
+      </md-tab>
+      <md-tab label="Horario">
+        <md-content class="md-padding">
+          <div ng-controller="ReservaCtrl">
+            <md-event-calendar
+              auto-height="40"
+              ng-model="selected"
+              md-events="listaevent"
+              md-event-click="eventClicked($selectedEvent)"
+              md-create-event-click="createClicked($date)"
+              md-label="title"
+              md-show-create-link
+              md-create-disabled="dis"
+            > 
+
+              <md-event-calendar-header>
+                <div flex></div>
+                <md-event-calendar-prev></md-event-calendar-prev>
+                <md-event-calendar-title></md-event-calendar-title>
+                <md-event-calendar-next></md-event-calendar-next>
+                <div flex layout="row">
+                  <span flex></span>
+                  <md-event-calendar-today></md-event-calendar-today>
+                </div>
+              </md-event-calendar-header>
+            </md-event-calendar>
+           <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button class="md-raised md-primary" href="http://localhost:9003/#!/acuerdos/acuerdos/page-main">Siguiente Pagar</md-button>
+      <md-button class="md-raised md-warn">Cancelar</md-button>
+    </section>
+            
+
+            </div>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>

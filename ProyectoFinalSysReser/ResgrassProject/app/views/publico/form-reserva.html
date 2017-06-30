@@ -1,0 +1,62 @@
+
+  <br/>
+  <center>
+                <a ng-href="#/" class="docs-logo">
+            <img src="media/img/pagos.png" width="300" height="200"alt=""></a></center>
+  <md-content class="md-no-momentum">
+    <md-input-container class="md-icon-float md-block">
+      <!-- Use floating label instead of placeholder -->
+      <label>Nombre</label>
+      <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+      <input ng-model="user.name" type="text">
+    </md-input-container>
+
+     <md-input-container class="md-icon-float md-block">
+      <!-- Use floating label instead of placeholder -->
+      <label>Apellidos</label>
+      <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+      <input ng-model="user.name" type="text">
+    </md-input-container>
+
+     <md-input-container class="md-icon-float md-block">
+      <!-- Use floating label instead of placeholder -->
+      <label>Telefono</label>
+      <md-icon md-svg-src="media/img/5.jpg" class="name"></md-icon>
+      <input ng-model="user.name" type="text">
+    </md-input-container>
+
+  
+
+    <md-input-container class="md-block">
+      <!-- Use floating placeholder instead of label -->
+      <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
+      <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <!-- Use floating placeholder instead of label -->
+      <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
+      <input ng-model="user.numero_tarjeta" type="numero_tarjeta" placeholder="Nro Tarjeta" ng-required="false">
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <!-- Use floating placeholder instead of label -->
+      <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
+      <input ng-model="user.numero_tarjeta" type="numero_tarjeta" placeholder="4 Digitos" ng-required="false">
+    </md-input-container>
+
+
+    <md-input-container class="md-icon-float md-icon-right md-block">
+      <label>Codigo Postal</label>
+      <md-icon md-svg-src="img/icons/ic_card_giftcard_24px.svg"></md-icon>
+      <input ng-model="user.donation" type="number" step="0.01">
+      <md-icon md-svg-src="img/icons/ic_euro_24px.svg"></md-icon>
+    </md-input-container>
+
+ <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button class="md-raised md-primary" href="http://localhost:9003/#!/acuerdos/acuerdos/agendas">Pagar</md-button>
+      <md-button class="md-raised md-warn" href="http://localhost:9003/#!/acuerdos/acuerdos/page-main">Cancelar</md-button>
+    </section>
+  </md-content>
+
+</div>
